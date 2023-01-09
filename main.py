@@ -5,7 +5,7 @@ import utils
 
 lena_gray = utils.Histogram()
 lena_gray.read_image('imgs/lena_gray.bmp')
-"""
+
 hist_lena_gray = lena_gray.calcHistogram()
 lena_gray.show(hist_lena_gray, "Histograma - lena_gray", "Intensidades", "Frequências")
 
@@ -17,7 +17,6 @@ lena_gray.show(normal_hist_lena_gray, "Histograma normalizado - lena_gray", "Int
 acum_hist_lena_gray = lena_gray.calcAcumulatedHistogram()
 lena_gray.show(acum_hist_lena_gray, "Histograma acumulado - lena_gray", "", "Frequência acumulada")
 
-"""
 ################ QUESTÃO 3 ################
 
 # ITEM A

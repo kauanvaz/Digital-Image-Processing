@@ -55,15 +55,15 @@ class Histogram:
 
         for i, v in enumerate(freqs):
             aux = [intens_max*(freqs[x])/self.totalPixels for x in range(i+1)]
-            novo_valor = round(sum(aux))
+            new_value = round(sum(aux))
 
-            equalized_hist[novo_valor] = freqs[i] if equalized_hist[novo_valor] == 0 else equalized_hist[novo_valor] + freqs[i]
-            mapping.append(novo_valor)
+            equalized_hist[new_value] = freqs[i] if equalized_hist[new_value] == 0 else equalized_hist[new_value] + freqs[i]
+            mapping.append(new_value)
 
             aux_image = np.array([0]*img_size)
             indexes = np.where(self.flattened_image == i)
 
-            for i in indexes[0]: aux_image[i] = novo_valor
+            for i in indexes[0]: aux_image[i] = new_value
 
             equalized_flat_image = np.add(equalized_flat_image, aux_image)
 
@@ -91,10 +91,10 @@ class Histogram:
 
         for i, v in enumerate(z):
             aux = [(L-1)*(z[x])/self.totalPixels for x in range(i+1)]
-            novo_valor = round(sum(aux))
+            new_value = round(sum(aux))
 
-            specified_hist[novo_valor] = z[i] if specified_hist[novo_valor] == 0 else specified_hist[novo_valor] + z[i]
-            spec_mapping.append(novo_valor)
+            specified_hist[new_value] = z[i] if specified_hist[new_value] == 0 else specified_hist[new_value] + z[i]
+            spec_mapping.append(new_value)
         
         self.__transformationFunction(spec_mapping)
         
